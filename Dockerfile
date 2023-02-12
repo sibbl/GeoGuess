@@ -3,7 +3,7 @@ FROM node:lts-alpine as builder
 WORKDIR /app
 COPY package*.json ./
 RUN apk add --no-cache python3 make g++
-RUN npm install
+RUN npm ci
 COPY . .
 
 # SET ENV VARS FOR REPLACE
