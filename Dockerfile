@@ -3,6 +3,7 @@ FROM node:lts-alpine as builder
 WORKDIR /app
 COPY package*.json ./
 RUN apk add --no-cache python3 make g++
+ENV NODE_ENV=production
 RUN npm ci
 COPY . .
 
